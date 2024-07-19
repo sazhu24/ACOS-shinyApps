@@ -1,2 +1,6 @@
-
-sdg_course_mapping/.DS_Store
+*.DS_Store
+*.RData
+*.Rhistory
+*.Rproj*
+*/app_cache
+*/rsconnect
