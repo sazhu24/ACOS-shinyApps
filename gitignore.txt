@@ -3,3 +3,4 @@
 ~/.Rhistory
 ~/app_cache
 ~/rsconnect
+sdg_course_mapping/.DS_Store
