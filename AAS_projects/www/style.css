@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Alegreya+Sans+SC&family=Cabin+Sketch&family=Jost&family=Outfit&family=Palanquin+Dark&family=Rock+3D&family=Six+Caps&family=Yantramanav&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Julius+Sans+One&family=Lexend&family=Londrina+Solid:wght@300&family=Palanquin+Dark&family=Readex+Pro&display=swap');
+
+
+@media only screen and (max-width: 600px) {
+  #logo{
+    height: 50px;
+  }
+  .navbar{
+    position: relative !important;
+    margin-bottom: 0px !important;
+  }
+  #all_categories, #ideas, #approval_btn, #sus_proj_btn, #about_btn, #master_table > div > div.rt-table > div.rt-thead{
+    display:none !important;  
+  }
+  .main {
+    width: 98% !important;
+    margin: 0px auto 10px auto !important;
+    
+  }
+  .rt-search {
+    width: 100% !important; 
+    align-self: auto !important;
+    
+  }
+  
+  #master_table > div > div.rt-table > div.rt-tbody > div > div > div.rt-td.rt-align-left.col1.reactable-dnfbra{
+    min-width: 95% !important;
+    flex: 00 0 auto !important;
+  }
+  
+  .rt-td.rt-align-left.col2.reactable-dnfbra, 
+  .rt-td.rt-align-left.col3.reactable-dnfbra, 
+  .rt-td.rt-align-left.col4.reactable-dnfbra{
+    display:none !important;  
+  }
+  
+  .rt-td-inner {
+    padding: 3px 0px !important;
+    width: 45% !important;
+  }
+  
+  .expand {
+    width: 100% !important;
+  }
+  
+}
+  
+.navbar {
+overflow: visible;
+background-color: white;
+position: fixed; 
+top: 0; 
+width: 100%;
+margin: 0 auto;
+z-index: 5;
+
+}
+
+.controls{
+z-index:10;
+}
+
+.main{
+width:89%;
+margin: 220px auto 10px auto;
+}
+
+#logo{
+margin-bottom:-5px;
+}
+
+.bar{
+margin: 0 15px; 
+
+}
+
+.bar, .btn{
+font-weight:bold; 
+font-size:13px; 
+color:black; 
+display: inline-block;
+}
+
+.shiny-input-container:not(.shiny-input-container-inline) {
+width: 250px;
+}
+
+#ideas{
+display: inline-block;
+margin: 0 15px; 
+border-radius: 18px;
+}
+
+.bttn-simple.bttn-default {
+background: #ededed;
+color: #000000;
+font-size: 13px;
+width:250px;
+}
+
+.bttn-stretch.bttn-danger {
+color: #6c6c6c;
+}
+
+.bttn-stretch.bttn-md, .bttn-simple.bttn-md{
+
+padding: 9px 12px;
+font-family: Jost;
+font-weight:700;
+}
+
+.bttn-stretch.bttn-md{
+font-size: 18px;
+}
+
+.btn:not(:disabled):not(.disabled) {
+border-radius: 18px;
+}
+
+:not(.input-group)>.bootstrap-select.form-control:not([class*=col-]) {
+border-radius: 18px;
+}
+
+
+.btn{
+line-height:1.3;
+font-size: .76562rem;
+text-transform: uppercase;
+}
+
+   
+.form-group {
+margin-bottom: 0;
+}
+
+.btn-secondary{
+background-color: #532f80;
+color: white;
+opacity:0.8
+}
+
+.btn-info{
+background-color:#ededed;
+border: 0px;
+color: #271f33;
+}
+
+.dropdown-menu>li>a {
+padding: 0.65rem 3rem;
+font-size: 15px;
+font-weight:600;
+font-family: Jost;
+}
+
+.dropdown-menu>li.active>a {
+background-color: #a7bcd0
+}
+
+.my-header{
+font-size:23px;
+font-variant: small-caps;
+font-weight: bold;
+color: black;
+font-family:Lato;
+text-align:left
+}
+
+.col1{
+font-size:16px;
+font-weight:bold;
+color: #4a4a4a;
+padding: 20px 20px 20px 7px;
+font-variant: normal; 
+font-family: Jost;
+}
+
+.col2{
+font-size:16px;
+color: #4a4a4a;
+font-variant: normal; 
+padding: 20px 20px 20px 7px;
+}
+
+.col3{
+font-size:15px; 
+font-variant: normal; 
+color: #5c5c5c;
+font-family:Jost;
+text-align:left
+}
+
+
+.expand{
+width:80%;
+font-variant: normal; 
+font-size:13px; 
+margin-top:-20px;
+font-family:Jost;
+}
+
+div.filter-option-inner-inner{
+text-align:center;
+}
+
+.rt-expander {
+top:50%
+}
+
+.rt-search{
+width:20%;
+font-family:Jost;
+padding: 7px 8px;
+}
+
+#mammoth{
+position:fixed; 
+bottom: 0; 
+right: 0.4%
+}
+
+a:hover{
+text-decoration:none;
+color:#a198ab;
+}
+
+.modal-content {
+border-radius: 5px;
+}
+
+.modal-dialog {
+max-width: 550px;
+}
+
+.modal.show .modal-dialog, .modal.in .modal-dialog {
+position: relative;
+top: 50%;
+transform: translateY(-50%);
+}
+
+.modal-footer {
+-webkit-justify-content: center;
+padding: 0.5rem;
+
+}
+
+.bttn-simple.bttn-md {
+border-radius: 18px;
+}
