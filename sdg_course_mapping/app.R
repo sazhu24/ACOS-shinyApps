@@ -113,7 +113,7 @@ ui <- navbarPage(
   # add mammoth SDG logo to page title
   # this appears as an image in the top left corner
   title = div(style = "margin-top: - 6px;",
-              img(src = "logo4.png", height = 70)),
+              img(src = "mammothSDG_logo.png", height = 70)),
   
   ### TAB 1: MAIN TABLE
   tabPanel(
@@ -161,7 +161,7 @@ ui <- navbarPage(
         style = "padding: 20px 0 10px 0; width: 87%; style: inline-block; border-radius: 5px; text-align: center",
         img(
           id = 'logo-mobile',
-          src = "logo4.png",
+          src = "mammothSDG_logo.png",
           height = 85,
           style = ''
         ),
