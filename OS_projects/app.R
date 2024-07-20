@@ -17,6 +17,7 @@ library(remotes)
 library(gargle)
 library(conflicted)
 
+# prefer filter from dplyr package
 conflicts_prefer(dplyr::filter)
 
 # authenticate with gargle using read-only token

@@ -1,3 +1,7 @@
+## AAS Projects Database
+## Created by Sara Zhu (saraz2069@gmail.com), last updated July 2024
+
+# load required packages
 library(shiny)
 library(shinythemes)
 library(tidyverse)
