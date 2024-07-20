@@ -14,11 +14,19 @@ library(shinyjs)
 library(openxlsx)
 library(googlesheets4)
 
-#options(gargle_oauth_cache = ".secrets")
-gs4_auth(cache = ".secrets", email = "saraz2069@gmail.com")
+# authenticate with gargle using read-only token
+options(gargle_oauth_cache = ".secrets")
 
-project_df <- read_sheet("https://docs.google.com/spreadsheets/d/1hiluBkMV81ZDxZzl449kp1qAh7Wux6jqrewHACRJaXs") 
-project_df <- tibble::as_tibble(project_df)
+gs4_auth(
+  email = "saraz2069@gmail.com",
+  cache = ".secrets", 
+  scopes = "https://www.googleapis.com/auth/spreadsheets.readonly"
+)
+
+# read projects from google sheet
+project_df <- tibble::as_tibble(
+  read_sheet("https://docs.google.com/spreadsheets/d/1hiluBkMV81ZDxZzl449kp1qAh7Wux6jqrewHACRJaXs")
+)
 
 
 ############

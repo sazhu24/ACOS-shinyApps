@@ -19,9 +19,14 @@ library(conflicted)
 
 conflicts_prefer(dplyr::filter)
 
-# authenticate using token
+# authenticate with gargle using read-only token
 options(gargle_oauth_cache = ".secrets")
-gs4_auth(cache = ".secrets", email = "saraz2069@gmail.com")
+
+gs4_auth(
+  email = "saraz2069@gmail.com",
+  cache = ".secrets", 
+  scopes = "https://www.googleapis.com/auth/spreadsheets.readonly"
+  )
 
 # read projects from google sheet
 project_df <- tibble::as_tibble(
