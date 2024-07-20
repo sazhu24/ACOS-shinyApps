@@ -14,6 +14,7 @@ library(shinyjs)
 library(openxlsx)
 library(googlesheets4)
 
+#options(gargle_oauth_cache = ".secrets")
 gs4_auth(cache = ".secrets", email = "saraz2069@gmail.com")
 
 project_df <- read_sheet("https://docs.google.com/spreadsheets/d/1hiluBkMV81ZDxZzl449kp1qAh7Wux6jqrewHACRJaXs") 
@@ -25,45 +26,44 @@ project_df <- tibble::as_tibble(project_df)
 ############
 
 ui <- fluidPage(
-  # set theme for page 
+  # set page theme based on 'Lux': https://bootswatch.com/lux/
   theme = bs_theme(
-    base_font = font_google("Lato"),
-    heading_font = font_google("Lato"),
+    base_font = font_google("Jost"),
+    heading_font = font_google("Jost"),
     version = 4,
     bootswatch = "lux"
   ),
+  
   # set page title that appears on tab
   title = "AAS Projects",
 
   tabPanel(
     title = "AAS Projects",
     
-    # add tags for google analytics
     tags$head(
+      # add tags for google analytics
       includeHTML(("google-analytics.html")),
       includeHTML(("google-tag-manager.html")),
       # import css style sheet
       tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
     ),
-    # add code for google analytics tags
+    
     tags$noscript(
+      # add iframe for google analytics tags
       tags$iframe(
         src = 'https://www.googletagmanager.com/ns.html?id=GTM-PJPKFSDB',
-        height = '0',
-        width = '0',
+        height = '0', width = '0',
         style = 'display:none;visibility:hidden'
       )
     ),
     
     # add line to enable shinyjs functions
-    shinyjs::useShinyjs(),
+    useShinyjs(),
     
     mainPanel(
       # set panel format
       width = "100%",
       align = "center",
-      # add line to enable shinyjs functions
-      useShinyjs(),
       
       div(
         class = "navbar",
@@ -249,12 +249,14 @@ server <- function(input, output, session){
             flexDirection = "column",
             justifyContent = "center"
           ),
-          # add shadow to selected rows
-          rowSelectedStyle = list(boxShadow = "inset 2px 0 0 0 #ffa62d")
+          # add yellow accent line to selected rows
+          rowSelectedStyle = list(
+            boxShadow = "inset 2px 0 0 0 #ffa62d"
+          )
         ),
         # show expanded row with description when a row is clicked
         details = function(index) {
-          # create expand, a dataframe containing the 'description' column for the selected row
+          # create expand, a data frame containing the 'description' column for the selected row
           expand <- table[index, "description"]
           # if expand contains content, expand row and display 'description'
           if (!is.na(expand[, 1])) {
