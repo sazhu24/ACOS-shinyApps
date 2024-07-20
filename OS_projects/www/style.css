@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Alegreya+Sans+SC&family=Cabin+Sketch&family=Jost&family=Outfit&family=Palanquin+Dark&family=Rock+3D&family=Six+Caps&family=Yantramanav&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Julius+Sans+One&family=Lexend&family=Londrina+Solid:wght@300&family=Palanquin+Dark&family=Readex+Pro&display=swap');
+
+#master_table { width:70% }
+
+.tbl{
+text-align:center;
+padding:0 3%
+}
+
+.box{
+padding: 0px 0px 0px 20px
+}
+
+.rt-th.rt-align-left.my-header.rt-td-select{
+padding: 0px 0px 0px 20px
+}
+
+.rt-td-inner, .rt-th-inner {
+padding-right: 15px;
+}
+
+.my-header{
+font-size:20px;
+font-weight: 400;
+color: black;
+font-family:Outfit;
+font-variant:small-caps
+
+}
+
+.col1{
+font-size:17px;
+font-weight:300;
+color: #4a4a4a;
+padding: 0px 15px 0px 50px;
+font-variant: normal; 
+font-family: Alata;
+}
+
+.col2{
+padding: 25px 0px 25px 0px;
+text-align:left
+}
+
+.col3{
+font-size:15px; 
+font-variant: normal; 
+color: #808080;
+font-family:Jost;
+padding-right:50px
+}
+
+.col4{
+font-size:15px; 
+font-family:Jost;
+}
+
+.expand{
+width:80%;
+font-variant: normal; 
+font-size:13px; 
+margin-top:-20px;
+font-family:Jost;
+}
+
+.sidebar{
+text-align:center;
+color:black;
+font-variant: small-caps;
+margin-top:-30px
+}
+
+.sidebar_vals{
+font-size:13px; 
+color: #5c5c5c;
+font-family:Jost;
+text-align:left;
+font-variant: normal;
+}
+
+#name, #email, #message{
+font-size: 12px;
+width:95%;
+text-align:left
+}
+
+#name, #email{
+height:30px;
+}
+
+#message{
+margin-bottom:30px;
+height:60px;
+}
+
+.rt-expander-button, .rt-expander{
+opacity:0;
+height:0;
+margin:0;
+width:0
+}
+
+.rt-search{
+width:20%;
+font-family:Jost;
+padding: 7px 8px;
+}
+
+
+
+div.filter-option-inner-inner{
+text-align:center;
+}
+
+.dropdown-menu.show{
+font-family:Jost;
+font-weight:bold
+font-size:14
+}
+
+.dropdown-menu>li>a {
+padding: 0.3rem 1.5rem;
+}
+
+.dropdown-menu>li.active>a {
+background-color:#567287;
+
+}
+
+.dropdown-menu {
+font-size: .9rem;
+}
+
+.btn-secondary{
+background-color:#eaeffa;
+color: black;
+opacity:0.8;
+}
+
+
+.bttn-pill.bttn-warning {
+background: #877de0;
+color: #ffffff;
+}
+
+.bttn-pill.bttn-success {
+background: #8bcb87;
+color: #fff;
+}
+
+.bttn-simple.bttn-primary {
+background:  #fff;
+color: black;
+
+}
+
+.bttn-simple.bttn-primary:hover {
+color: grey
+}
+
+.bttn-pill.bttn-md {
+font-size: 14px;
+}
+
+.btn {
+font-size: .67rem;
+padding: 0.5rem 1.3rem;}
+
+.bttn-simple.bttn-md {
+font-size: 20px;
+font-family: 'Jost';}
+
+
+.modal-content {
+border-radius: 5px;
+}
+
+.modal.show .modal-dialog, .modal.in .modal-dialog {
+position: relative;
+top: 45%;
+transform: translateY(-50%);
+}
+
+.modal-footer {
+padding: 0.25rem;
+-webkit-justify-content: center;
+}
+
+.modal-body {
+padding: 1rem;
+}
+
+.shiny-input-container:not(.shiny-input-container-inline) {
+width: 85%;
+margin: 15px auto;
+    }
+
+.modal-dialog {
+max-width: 550px;
+}
+
+.bootstrap-select>.dropdown-toggle {
+border-radius: 5px;
+}
+
+      
+.btn:not(:disabled):not(.disabled) {
+border-radius: 5px;
+}
+
+:not(.input-group)>.bootstrap-select.form-control:not([class*=col-]) {
+border-radius: 5px;
+}
+
+.form-control {
+border-radius: 5px;
+} 
+
+.myClass {
+color: black !important; 
+animation: 1.8s anim-flipX ease 1;
+font-size:17px !important;
+}
+
+@keyframes anim-flipX {
+  0% {
+    opacity: 0;
+    transform: rotateX(90def);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+  100% {
+    /* animate nothing to pause animation at the end */
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+}
+
+.menu{
+color: #545454; 
+font-size:16px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  body > div > div.tab-pane > div > div:nth-child(1){
+    font-size: 28px !important;
+
+  }
+  body > div > div:nth-child(1) > img{
+    height: 70px !important;
+  }
+  
+  #propose{
+    display: none !important;
+  }
+  
+  body > div > div.tab-pane > div > div:nth-child(3) > div:nth-child(3) > div > div{
+   width: 100% !important;
+  }
+  
+  body > div > div.tab-pane > div > div:nth-child(3) > div:nth-child(3) > div{
+    width: 86% !important;
+  }
+  
+  #type_select > div{
+    font-size: 11px !important;
+  }
+  
+  #master_table > div > input{
+    display: none !important;
+  }
+  
+  #master_table > div > div.rt-table > div.rt-tbody > div > div > div.rt-td.rt-align-left.box.reactable-dnfbra.rt-td-select{
+    display: none !important;
+  }
+  
+  .col1 {
+    font-size: 15px !important;
+    padding: 0px !important;
+    min-width: 260px !important;
+    max-width: 260px !important;
+  }
+  
+  .col2 {
+    padding: 7px 1% !important;
+  }
+  
+  .rt-td-inner{
+    padding: 7px 3px 7px 0px !important;
+  }
+  
+  #master_table > div > div.rt-table > div.rt-tbody > div:nth-child > div > div.rt-td.rt-align-left.col2.reactable-dnfbra{
+    min-width: 80px;
+    width: 80px;
+    max-width: 130px;
+  }
+  
+  #master_table > div > div.rt-table > div.rt-thead > div > div.rt-th.rt-align-left.my-header.rt-td-select > div,
+  #master_table > div > div.rt-table > div.rt-thead > div > div.rt-th.rt-align-left.my-header.rt-td-select,
+  #master_table > div > div.rt-table > div.rt-thead > div > div:nth-child(4) > div > div > div > div,
+  #master_table > div > div.rt-table > div.rt-thead > div > div:nth-child(5) > div > div > div > div{
+    display: none !important;
+  }
+  
+  #master_table > div > div.rt-table > div.rt-thead > div > div:nth-child(2) > div > div > div > div,
+  #master_table > div > div.rt-table > div.rt-thead > div > div:nth-child(2) > div{
+    padding: 0px !important;
+  }
+  
+  .my-header {
+    font-size: 24px !important;
+    font-variant: all-small-caps !important;
+  }
+}
