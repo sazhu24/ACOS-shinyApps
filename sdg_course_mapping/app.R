@@ -9,17 +9,14 @@
 library(shiny)
 library(shinythemes)
 library(tidyverse)
-library(bslib)
 library(shinyWidgets)
-library(stringr)
-library(purrr)
 library(htmltools)
 library(reactable)
 library(dipsaus)
 library(openxlsx)
 
 ## import data
-courses_table <- read.xlsx('data.xlsx') %>% 
+courses_table <- read.xlsx('data.xlsx') |> 
   # nest sdg scores and sdg keywords to tidy data
   nest(sdg_score = c(score1:score16),
        sdg_keywords = c(keywords1:keywords16))
@@ -103,9 +100,9 @@ offered <- c("ALL SEMESTERS", "SPRING 2024", "FALL 2023", "SPRING 2023", "FALL 2
 ui <- navbarPage(
   
   # set page theme based on 'Lux': https://bootswatch.com/lux/
-  theme = bs_theme(
-    base_font = font_google("Jost"),
-    heading_font = font_google("Jost"),
+  theme = bslib::bs_theme(
+    base_font = bslib::font_google("Jost"),
+    heading_font = bslib::font_google("Jost"),
     version = 4,
     bootswatch = "lux"
   ),

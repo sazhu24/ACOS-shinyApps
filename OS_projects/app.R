@@ -4,37 +4,20 @@
 # load required packages
 library(shiny)
 library(shinythemes)
-library(tidyverse)
-library(dplyr)
-library(bslib)
 library(shinyWidgets)
-library(stringr)
 library(shinyBS)
-library(reactable)
-library(htmltools)
-library(dipsaus)
 library(shinyalert)
 library(shinyjs)
+library(reactable)
+library(htmltools)
 library(openxlsx)
 library(googlesheets4)
-library(remotes)
-library(gargle)
-library(conflicted)
+library(tidyverse)
 
-# prefer filter from dplyr package
-conflicts_prefer(dplyr::filter)
+gs4_deauth()
 
-# authenticate with gargle using read-only token
-options(gargle_oauth_cache = ".secrets")
-
-gs4_auth(
-  email = "saraz2069@gmail.com",
-  cache = ".secrets", 
-  scopes = "https://www.googleapis.com/auth/spreadsheets.readonly"
-  )
-
-# read projects from google sheet
-project_df <- tibble::as_tibble(
+# read data from google sheet
+project_df <- as_tibble(
   read_sheet("https://docs.google.com/spreadsheets/d/1EzIMb-RsjX4bvsZ6rt-GTxEzjzRCW9x9HxrFdS0LnZY")
 )
 
@@ -44,9 +27,9 @@ project_df <- tibble::as_tibble(
 
 ui <- fluidPage(
   # set page theme based on 'Lux': https://bootswatch.com/lux/
-  theme = bs_theme(
-    base_font = font_google("Jost"),
-    heading_font = font_google("Jost"),
+  theme = bslib::bs_theme(
+    base_font = bslib::font_google("Jost"),
+    heading_font = bslib::font_google("Jost"),
     version = 4,
     bootswatch = "lux"
   ),
@@ -75,7 +58,7 @@ ui <- fluidPage(
       )
     ),
     
-    # add line to enable shinyjs functions
+    # add line to use shinyjs functions
     useShinyjs(),
     
     mainPanel(
@@ -126,10 +109,10 @@ ui <- fluidPage(
             style = "simple",
             color = "primary"
           ),
-          # 'propose' button
+          # 'propose_project' button
           # opens PROPOSAL form
           actionBttn(
-            inputId = "propose",
+            inputId = "propose_project",
             label = div(class = "menu", "propose a new project"),
             style = "simple",
             color = "primary"
@@ -499,7 +482,7 @@ server <- function(input, output, session){
     ### SHOW FORMS ###
     
     # show PROPOSAL form when 'propose_project' button is clicked
-    observeEvent(input$propose, {
+    observeEvent(input$propose_project, {
       showModal(proposal_form())
     })
     
@@ -519,7 +502,7 @@ server <- function(input, output, session){
     })
     
     observe({
-      if(highlight()){
+      if(highlight() == 1){
         showModal(project_interest_form())
       }
     })
@@ -537,9 +520,9 @@ server <- function(input, output, session){
       })
     })
     
-    # activated when 'propose' button is clicked
+    # activated when 'propose_project' button is clicked
     # enables submit button when all required fields are filled
-    observeEvent(input$propose, {
+    observeEvent(input$propose_project, {
       observe({
         toggleButton(
           button_name = "submit_btn3",

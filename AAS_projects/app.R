@@ -4,31 +4,20 @@
 # load required packages
 library(shiny)
 library(shinythemes)
-library(tidyverse)
-library(dplyr)
-library(bslib)
 library(shinyWidgets)
-library(stringr)
 library(shinyBS)
-library(reactable)
-library(htmltools)
-library(dipsaus)
 library(shinyalert)
 library(shinyjs)
+library(reactable)
+library(htmltools)
 library(openxlsx)
 library(googlesheets4)
+library(tidyverse)
 
-# authenticate with gargle using read-only token
-options(gargle_oauth_cache = ".secrets")
+gs4_deauth()
 
-gs4_auth(
-  email = "saraz2069@gmail.com",
-  cache = ".secrets", 
-  scopes = "https://www.googleapis.com/auth/spreadsheets.readonly"
-)
-
-# read projects from google sheet
-project_df <- tibble::as_tibble(
+# read data from google sheet
+project_df <- as_tibble(
   read_sheet("https://docs.google.com/spreadsheets/d/1hiluBkMV81ZDxZzl449kp1qAh7Wux6jqrewHACRJaXs")
 )
 
@@ -39,9 +28,9 @@ project_df <- tibble::as_tibble(
 
 ui <- fluidPage(
   # set page theme based on 'Lux': https://bootswatch.com/lux/
-  theme = bs_theme(
-    base_font = font_google("Jost"),
-    heading_font = font_google("Jost"),
+  theme = bslib::bs_theme(
+    base_font = bslib::font_google("Jost"),
+    heading_font = bslib::font_google("Jost"),
     version = 4,
     bootswatch = "lux"
   ),
